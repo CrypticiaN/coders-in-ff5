@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Coders in FF5</title>
-</head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/head"></head>
 <body>
-    <header>
-        <p>Hello coders!</p>
-    </header>
+    <header th:replace="fragments/header"></header>
     <section class="container"></section>
-    <footer></footer>
+    <footer th:replace="fragments/footer"></footer>
 </body>
 </html>
