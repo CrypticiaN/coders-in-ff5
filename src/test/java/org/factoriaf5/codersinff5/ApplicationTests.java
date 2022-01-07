@@ -1,6 +1,8 @@
 package org.factoriaf5.codersinff5;
 
 
+import org.factoriaf5.codersinff5.repositories.Coder;
+import org.factoriaf5.codersinff5.repositories.CoderRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -21,5 +23,19 @@ class ApplicationTests {
         mockMvc.perform(get("/"))
                 .andExpect(status().isOk())
                 .andExpect(view().name("home"));
+    }
+
+    @Autowired
+    CoderRepository coderRepository;
+
+    @Test
+    void returnsTheExistingCoders() throws Exception {
+
+        Coder coder = coderRepository.save(new Coder("Helen Jane", "Didsbury", "24", "Alemania", "Grado medio", "Pla de Fornells 57", "Femtech P2"));
+
+        mockMvc.perform(get("/coders"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("coders/all"))
+                .andExpect(model().attribute("coders", hasItem(coder)));
     }
 }
