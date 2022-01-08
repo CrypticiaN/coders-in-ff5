@@ -24,11 +24,20 @@ public class CodersController {
     }
 
     @GetMapping("/")
+    String getHome(Model model) {
+        return "home";
+    }
+
+    @GetMapping("/coders/all.html")
     String listCoders(Model model) {
         List<Coder> coders = (List<Coder>) coderRepository.findAll();
         model.addAttribute("nombre", "Coder list");
         model.addAttribute("coders", coders);
-        return "home";
+        return "coders/all";
     }
 
+    @GetMapping("/coders/newcoder.html")
+    String getForm(Model model) {
+        return "coders/newcoder";
+    }
 }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="fragments/head"></head>
+<body>
+    <header th:replace="fragments/header"></header>
+    <section class="container">
+        <form th:action="@{/coders/newcoder}" th:object="${coder}" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
+            <!-- Nombre -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="nombre">
+                    Nombre
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="nombre" type="text" placeholder="Nombre">
+            </div>
+
+            <!-- Apellidos -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="apellidos">
+                    Apellidos
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="apellidos" type="text" placeholder="Apellidos">
+            </div>
+
+            <!-- edad -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="edad">
+                    Edad
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="edad" type="number" placeholder="Edad">
+            </div>
+
+            <!-- País de Origen -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="pais_origen">
+                    País de Origen
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="pais_origen" type="text" placeholder="Eligir País">
+            </div>
+
+            <!-- Estudios -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="estudios">
+                    Estudios
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="estudios" type="text" placeholder="Estudios más altos completados">
+            </div>
+
+            <!-- Dirección -->
+            <div class="mb-4">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="direccion">
+                    Dirección
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="direccion" type="text" placeholder="Dirección">
+            </div>
+
+            <!-- Promoción -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="promocion">
+                    Promoción
+                </label>
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="promocion" type="text" placeholder="Promoción de FactoríaF5">
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                    Save
+                </button>
+                <a class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                    Forgot Password?
+                </a>
+            </div>
+        </form>
+    </section>
+    <footer th:replace="fragments/footer"></footer>
+</body>
+</html>

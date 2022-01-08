@@ -44,5 +44,11 @@ class ApplicationTests {
         coderRepository.deleteAll();
     }
 
+    @Test
+    void returnsAFormToAddNewCoders() throws Exception {
+        mockMvc.perform(get("/newcoder"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("newcoder"));
+    }
 
 }
